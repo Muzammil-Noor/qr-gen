@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
   "name": "QR Generator",
-  "version": "1.0",
-  "description": "Generate QR codes instantly using qrserver API",
+  "version": "1.3",
+  "description": "Generate QR codes instantly (offline)",
+  "permissions": ["contextMenus", "tabs"],
   "action": {
     "default_popup": "index.html",
-    "default_title": "QR Generator"
-  },
-  "permissions": []
+    "default_title": "Generate QR"
+  }
 }

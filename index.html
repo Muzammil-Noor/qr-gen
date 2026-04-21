@@ -1,22 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>QR Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h3>QR Generator</h3>
-    
-    <input id="inputText" type="text" placeholder="Enter text or URL" />
-    <button id="generateBtn">Generate</button>
+    <head>
+        <title>QR Generator</title>
 
-    <div id="qrContainer">
-      <img id="qrImage" src="" alt="QR Code will appear here" />
-    </div>
-  </div>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background: #1e1e1e;
+                width: 280px;
+                color: #fff;
+            }
 
-  <script src="script.js"></script>
-</body>
+            .container {
+                padding: 14px;
+            }
+
+            .card {
+                background: #2a2a2a;
+                border-radius: 12px;
+                padding: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            }
+
+            h2 {
+                font-size: 14px;
+                margin: 0 0 10px;
+                color: #dcdcdc;
+                text-align: center;
+            }
+
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                border: 1px solid #444;
+                background: #1a1a1a;
+                color: #fff;
+                outline: none;
+                box-sizing: border-box;
+            }
+
+            input:focus, select:focus {
+                border-color: #4cafef;
+            }
+
+            #qr {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0;
+                padding: 10px;
+                background: #fff;
+                border-radius: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 8px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: 0.2s ease;
+            }
+
+            #downloadBtn {
+                background: #4cafef;
+                color: #fff;
+                margin-top: 5px;
+            }
+
+            #downloadBtn:hover {
+                background: #3a9ad9;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="card">
+
+                <h2>QR Generator</h2>
+                <input type="text" id="data" placeholder="Enter text or URL" />
+
+                <select id="size">
+                    <option value="150">150 x 150</option>
+                    <option value="200" selected>200 x 200</option>
+                    <option value="300">300 x 300</option>
+                    <option value="400">400 x 400</option>
+                </select>
+
+                <div id="qr"></div>
+                <button id="downloadBtn">Download QR</button>
+            </div>
+        </div>
+
+        <script src="qrcode.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
